@@ -1,0 +1,70 @@
+<head>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+  integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+  crossorigin="anonymous">
+  <style>
+    #wrapper {
+      padding: 15px;
+      background-color: lightgrey;
+    }
+    h1 {
+      font-size: 40px;
+      color: rgb(161, 46, 161);
+      text-align: center;
+    }
+    #detail h4{ 
+      display: inline-block;
+    }
+    h6 {
+      color: rgb(73, 173, 73);
+      font-size: 22px;
+      padding-left: 10px;
+      display: inline-block;
+    }
+    #main {
+      text-align: center;
+      width: 500px;
+      margin: auto;
+    }
+    #all {
+      margin: 15px;
+      padding-top: 10px;
+      background-color: rgb(107, 172, 194);
+      padding: 20px;
+      border-radius: 10px;
+      text-align: center;
+    }
+    li {
+      list-style-type: none;
+      margin-right: 30px;
+    }
+    h3 {
+      text-align: center;
+      color: blue;
+    }
+    #detail {
+      background-color: lightblue;
+      border-radius: 8px;
+      width: 500px;
+      padding: 15px;
+      margin-left: 30%;
+    }
+  </style>
+</head>
+<body>
+  <div id = "wrapper">
+    <h1>Tasks Checklist</h1>
+    
+    <div id = "main">
+      <button class = "btn btn-info" (click) = "showTasks()">Click the button to show all tasks</button>
+      <div id = "all" *ngIf = "show">
+        <ul>
+          <li *ngFor = "let task of tasks"><h4>{{task.title}}</h4>
+          <button class = "btn btn-success" (click) = "getTask(task)">Details</button></li>
+        </ul>
+      </div>
+    </div>
+
+    <app-task *ngIf = "task" [getTask] = "task"></app-task>
+  </div>
+</body>

@@ -1,0 +1,42 @@
+<head>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+  integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+  crossorigin="anonymous">
+  <style>
+    #wrapper {
+      padding: 15px;
+      background-color: rgb(190, 195, 199);
+    }
+    h3 {
+      text-align: center;
+    }
+    h4 { 
+      display: inline-block;
+    }
+    h6 {
+      color: rgb(73, 173, 73);
+      font-size: 22px;
+      padding-left: 10px;
+      display: inline-block;
+    }
+    #detail {
+      background-color: lightblue;
+      border-radius: 8px;
+      width: 500px;
+      padding: 15px;
+      margin-left: 30%;
+    }
+  </style>
+</head>
+<body>
+  <div id = "wrapper">
+    <h3>Task Details</h3>
+    <div id = "detail">
+          
+      <div id = "task">
+        <h4>{{getTask.title}}</h4><h6 *ngIf = "getTask.completed == true">Complete!</h6>
+        <p>{{getTask.description}}</p>
+      </div>
+    </div>
+  </div>
+</body>
